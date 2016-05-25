@@ -1,0 +1,45 @@
+* General organisation
+Si on se donne :
+- Une liste des cours
+- 
+
+
+
+Fichiers pour le programme perl :
+main.pl : fichier principale (sym)
+dmassign.pl : symlink vers main.pl
+dmassign-mod/*.pm : fichiers "Modules" perl
+report-skeleton.tex : le fichier utilisé pour créer le rapport LaTeX.
+
+** A year in the project
+- Mai-Jui :: décider des titularisations
+- Aoû-Sep :: décider de la répartition assistants 
+- Déc-Jan :: révision, si nécessaire, des titularisations et de la répartition
+
+** Git repository
+The git repo mostly serves as a synching tool, and "just in case"
+backup. All files used in a release (program, source .txt and output
+.tex and .pdf) should be copied over to a directory corresponding to
+their release date (git's design makes it cheap to track a file under
+multiple names anyway) ; use the Makefile to do this. This workflow is
+only used from version 20130820, i.e. the first git-originated
+release. It is hoped that this workflow is useful when working with
+non-git people. Also, preserving only .txt files is not a good choice,
+because the syntax of these files can vary slightly from release to
+release, and of course the produced files may vary a lot as the
+program is updated.
+
+* Acknowledgments
+This project is by Samuel Fiorini <sfiorini@ulb.ac.be> who wrote the .cpp and .txt files. The perl version is by Nicolas Richard <nrichard@ulb.ac.be>.
+
+* List of todos
+** TODO possibilité de mettre les cours gelés/en alternances, etc. en évidence
+Actuellement : on met le titulaire mais on laisse le nombre d'heures à 0/0/0 (avec le véritable nombre en commentaire)
+** TODO Donner plus de liberté au report-skeleton.tex, ou le modulariser un peu mieux ?
+Pour l'instant report-skeleton.tex est figé dans le répertoire dmassign-perl et le même est utilisé à tous les runs. Faut il passer une partie dans le répertoire data ?
+
+
+* COMMENT Local Variables
+# Local Variables:
+# mode: org
+# End:

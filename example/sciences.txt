@@ -1,0 +1,3 @@
+Nom,Clé hôte,Description,Nom du module,Programmé,Semaines programmées,Jours programmés,Heure de début (programmée),Durée,Nom de la salle allouée,Nom de l'enseignant alloué,Nom de l'ensemble d'étudiants alloué,Texte utilisateur 2,Texte utilisateur 4
+MATHF000/012345/THE/Q1,#SPLUSC00000,Mathématiques,MATHF000/012345,Coché,1-14,jeudi,10:00:00,02:00,,"Einstein, Albert; Einstein, Frank",,"Einstein, Albert; Einstein, Frank",MATHF000
+MATHF035/012346/THE/Q1,#SPLUSC00000,Mathématiques,MATHF000/012346,Coché,1-14,vendredi,10:00:00,02:00,,"Someone, Else",,"",MATHF035

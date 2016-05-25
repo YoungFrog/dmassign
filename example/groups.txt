@@ -1,0 +1,11 @@
+# Format:
+# NotreGroupe;GroupeHoraire
+
+# NotreGroupe est un nom de groupe tel que mentionné dans repartition.txt
+
+# GroupeHoraire est un nom de groupe tel que metionné dans l'horaire
+# sciences.txt. Ceci est interprété comme une regexp.
+
+MATH1;Math-gr1
+
+MATH;Math.*

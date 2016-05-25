@@ -1,0 +1,39 @@
+# Ce fichier est fourni comme exemple.
+
+# Le format du fichier est comme suit :
+# Champ 1 : code du cours 
+# Champ 2 : non-utilisé (était: modulation horaire (ECTS) th/ex/tp)
+# Champ 3 : nom du cours
+# Champ 4 : BA ou MA (l'idée est de supprimer ce champ de d'utiliser un programme.txt !)
+# Champ 5 : 0 = optionnel, 1 = obligatoire, 2 = service (l'idée est de supprimer ce champ de d'utiliser un programme.txt !)
+# Champ 6 : "Q1" ou "Q2" ou "Q1+Q2" -- non encore utilisé -- (attention, le programme peut "overrider" ceci.)
+# Champ 7 : 1 = en alternance, donné les années impaires-paires (p.ex. 2015-16)
+#           2 = en alternance, donné les années paires-impaires (p.ex. 2016-17)
+
+# Les champs manquants sont considérés vides, et les champs surnuméraires ne
+# sont pas utilisés. Ceci permet dans une certaine mesure d'interagir avec une
+# version plus ancienne ou plus récente du programme.
+
+# Idée de champ : (x1,x2,x3,...) nombre d'étudiants les années précédentes.
+
+
+# *** Bachelier ***
+
+MathF000;;Mathématiques;BA;0;Q2
+StatF000;;Statistiques;BA;1;Q1
+InfoF000;;Informatique;BA;1;Q2
+
+# *** Master ***
+
+StatF001;;Statistiques II;MA;0;Q2
+InfoF042;;Programmation fonctionnelle et applications;MA;0;Q1
+
+# *** Autres ***
+
+CP;;Coordination pédagogique;BA;0;
+INDISPONIBLE;;Indisponibilité;BA;0;
+
+# Local Variables:
+# mode: outline
+# outline-regexp: "^# \\*\\*\\*+ "
+# End:

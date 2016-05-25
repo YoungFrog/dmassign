@@ -1,0 +1,158 @@
+%%% You must provide \facteurThExe
+
+
+%%% Headers
+\documentclass[a4paper,landscape,french]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xstring}
+\usepackage{tabu}
+\usepackage{url}
+\usepackage{genmpage}
+\usepackage{varwidth} % defines the V column type.
+\usepackage{epstopdf}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorlinks,breaklinks,bookmarks]{hyperref}
+
+%%% Helper macros.
+\let\narrowragged\raggedright % avoid the effect of \narrowragged :
+                              % since we use varwidth in a table (V
+                              % column type), it can
+                              % lead to uneven line lengths accros
+                              % different table lines (which are typeset
+                              % in different varwidth envir.)
+\newenvironment{teacher}[2][]{
+\phantomsection
+\addcontentsline{toc}{subsection}{#2}
+\def\score{\IfStrEq{}{#1}{}{~--~Score: #1}}%made a macro for clarity.
+\tabular{|V{10cm}*{6}{l}|}
+%\firsthline
+\multicolumn{6}{l}{\bf #2 -- Enseignements \score}\\
+\hline
+\textsl{Cours} &\textsl{Groupe} &\textsl{Th} &\textsl{Exe} &\textsl{TP}& \textsl{Total} & \textsl{Programmé}\\
+\hline
+}{
+\lasthline
+\endtabular
+}
+\newenvironment{teacherhoraire}[1]{
+\tabular{|V{10cm}|l|}
+\firsthline
+\multicolumn{2}{|l|}{\bf #1 -- Horaire}\\
+\hline
+\hline
+\textsl{Horaire} &\textsl{T\^ache} \\
+\hline
+}{
+\lasthline
+\endtabular
+}
+\newenvironment{teacheradmin}[1]{
+\tabular{|V{10cm}|l|}
+\firsthline
+\multicolumn{2}{|l|}{\bf #1 -- T\^aches administratives}\\
+\hline
+\hline
+\textsl{T\^ache} &\textsl{Rating}\\
+\hline
+}{
+\lasthline
+\endtabular
+}
+\makeatletter
+\newcommand\nicegraph[6]{\setlength{\unitlength}{1cm}
+\raisebox{-\height}{\hbox{\begin{picture}(2.75,3.75)
+\multiput(0,0.4)(0,.2){16}{\line(1,0){2.25}}
+\put(2.3,0.3){\small $0$}
+\put(2.3,0.55){\tiny $10$}
+\put(2.3,0.75){\tiny $20$}
+\put(2.3,0.95){\tiny $30$}
+\put(2.3,1.15){\tiny $40$}
+\put(2.3,1.3){\small $50$}
+\put(2.3,1.55){\tiny $60$}
+\put(2.3,1.75){\tiny $70$}
+\put(2.3,1.95){\tiny $80$}
+\put(2.3,2.15){\tiny $90$}
+\put(2.3,2.3){\small $100$}
+\put(2.3,2.55){\tiny $110$}
+\put(2.3,2.75){\tiny $120$}
+\put(2.3,2.95){\tiny $130$}
+\put(2.3,3.15){\tiny $140$}
+\put(2.3,3.3){\small $150$}
+\put(0.2,0){\scriptsize SE}
+\put(0.95,0){\scriptsize BA}
+\put(1.7,0){\scriptsize MA}
+\put(0.25, 0.4){\color{BlueViolet}\rule{.25cm}{\dimexpr #1 cm/50\relax}} % SEth
+\put(0.25, \expandafter\strip@pt\dimexpr #1pt/50 + 2pt/5\relax){\color{RawSienna}\rule{.25cm}{\dimexpr #2 cm/50\relax}} % SEtp+ex (en unités eq_th)
+\put(1.0,0.4){\color{BlueViolet}\rule{.25cm}{\dimexpr #3 cm/50\relax}} % BAth
+\put(1.0, \expandafter\strip@pt\dimexpr #3pt/50 + 2pt/5\relax){\color{RawSienna}\rule{.25cm}{\dimexpr #4 cm/50\relax}} % BAtp+ex (en unités eq_th)
+\put(1.75,0.4){\color{BlueViolet}\rule{.25cm}{\dimexpr #5 cm/50\relax}} % MAth
+\put(1.75,\expandafter\strip@pt\dimexpr #5pt/50 + 2pt/5\relax){\color{RawSienna}\rule{.25cm}{\dimexpr #6 cm/50\relax}}
+\end{picture}}}}
+\makeatother
+
+%%% Actual document
+\title{D\'epartement de Math\'ematique~: r\'epartition des enseignements~\anneeaca}
+\author{Coll\`ege d'Enseignement / Commission P\'edagogique}
+\raggedright % this avoids TeX trying to avoid underful boxes
+\setcounter{tocdepth}{1}
+
+\begin{document}
+\maketitle
+\section{Remarques introductives}
+\begin{minipage}{0.6\linewidth}[keepparindent]
+  Ce document de travail interne et pr\'eliminaire concerne la répartition des tâches pédagogiques au sein du département de Mathématiques.
+\par\medskip
+
+Deux unit\'es sont utilis\'ees, ``h-th'' (pour ``heure de th\'eorie'') et 
+``h-exe'' (pour ``heure d'exercice ou de travail personnel''). Dans la r\'epartition, les totaux sont calculés selon la règle :
+1 h-th \'equivaut \`a \facteurThExe h-exe.
+\par\medskip
+
+%% Pourriez-vous consulter ce document en faisant particuli\`erement attention aux points suivants~:
+%% \begin{itemize}
+%% \item Les personnes absentes, ou arrivant, en \anneeaca.
+%% \item Les enseignements qui ne figurent pas, ou qui ne devraient pas figurer.
+%% \item Les enseignements de MA pour lesquels devraient \^etre comptabilis\'es des exercices, sans que
+%%        cela apparaisse.
+%% \end{itemize}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\multicolumn{2}{c}{Légende pour les graphes à gauche}\\
+\midrule
+SE & enseignement de service\\
+BA & enseignement du BA math\\
+MA & enseignement des MA math, stat ou actu\\\midrule
+Rouge & Exe (Séances d'exercices) et TP (\og Travaux personnels\fg{})\\
+Bleu & Théorie\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\tableofcontents
+
+\section{R\'epartition pr\'eliminaire}
+\shorthandoff{;!:?}
+%% @@@DATA@@@ %% This line will be ignored.
+
+% \section{Beau graphique}
+% \begin{center}
+% \includegraphics[width=10cm,angle=-90]{load}
+% \end{center}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

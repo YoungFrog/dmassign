@@ -1,0 +1,51 @@
+Exemples d'utilisations:
+
+* Sans argument, permet de voir si des messages d'erreurs sont produits :
+#+begin_src sh
+  dmassign
+#+end_src
+
+Pas de résultat !
+
+* Pour voir les charges
+#+begin_src sh
+  dmassign --teacher-charges
+#+end_src
+
+#+RESULTS:
+| Feynman   | 21 |
+| Feldspath | 21 |
+| Einstein  | 42 |
+| EinsteinA | 42 |
+
+* Pour créer un rapport latex
+Faire un rapport LaTeX dans le répertoire test :
+
+#+BEGIN_SRC sh
+  dmassign --report --outdir test
+#+END_SRC
+
+* Pour créer un rapport latex avec l'horaire
+#+BEGIN_SRC sh
+  dmassign --print-horaire --outdir test
+#+END_SRC
+
+* Afficher les conflits
+Entre les tâches :
+#+BEGIN_SRC sh :results verbatim
+  dmassign --task-conflicts
+#+END_SRC
+
+#+RESULTS:
+: Exe;INDISPONIBLE/Q1;Q1;0/0/0;Einstein|Exe;INDISPONIBLE/Q1;Feynman;0/0/0;Feynman (14 - Me. : 15:00-19:00 (1-14))
+: Exe;INDISPONIBLE/Q1;Feynman;0/0/0;Feynman|Exe;INDISPONIBLE/Q1;Q1;0/0/0;Einstein (14 - Me. : 15:00-19:00 (1-14))
+
+(utilisé par dmassign.el)
+
+Pour chaque personne :
+#+BEGIN_SRC sh
+  dmassign --teacher-conflicts
+#+END_SRC
+
+(Pas de résultats car pas de conflits dans cet exemple)
+

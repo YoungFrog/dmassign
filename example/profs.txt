@@ -1,0 +1,56 @@
+# -*- coding: utf-8-unix; -*-
+# *************************************
+# * DEPARTEMENT DE MATHEMATIQUE (ULB) *
+# *          ENSEIGNANTS              *
+# *************************************
+#
+# Champ 1 : code de l'enseignant -- doit être unique !
+# Champ 2 : nom complet de l'enseignant
+# Champ 3 : initiales de l'enseignant -- quasi inutilisé (affiché dans un graphe dans le rapport)
+# Champ 4 : type d'enseignant -- quasi inutilisé (peut être utilisé en option pour restreindre à certaines catégorie d'enseignants)
+#           # Non permanents
+#           0 = assistant intérimaire/élève assistant
+#           1 = assistant
+#           2 = doctorant non-assistant (p.ex. FRIA ou aspirant FNRS)
+#           3 = chercheur (postdoc, chargé de recherche)
+#           # Permanents:
+#           4 = chercheur (chercheur qualifié)
+#           5 = chargé de cours
+#           6 = professeur
+#           7 = professeur ordinaire
+#           8 = prof. de l'université
+#           9 = prof. extérieur
+# Champ 5 : charge maximale autorisée (CMA, cf ci-dessous),
+# Champ 6 : liste des cours/TP déjà attribués à la personne
+
+# Pour le champ 5, la CMA peut être :
+# 1. Un pourcentage de charge standard (120h-th), 
+# Par défaut un assistant c'est 100%
+# - un assistant intérim qui ne preste qu'au Q2. Je suggère: 60%
+# - un assistant qui doit être déchargé p.ex. défend sa thèse. Je suggère: 85%
+# - un assistant qui a terminé sa thèse et a été déchargé précédemment: Je suggère: 110%
+# Ce champ est très bancal actuellement -- utilisable pour la répartition des exercices entre les assistants !
+
+## Autres idées pour la CMA (non implémentées -- déjà la CMA en nombre d'heures l'est à peine...) :
+# 2. Un nombre d'heure, en h-th
+# Ceci est utile dans le cas des boursiers. p.ex.  pour un boursier par défaut c'est 24h-th
+# 3. Un delta par rapport précédents, par exemple:
+# - 12h+60% (boursier devenu assistant au Q2... bon ok ça n'arrive jamais)
+# - 40%+12h (assistant devenu boursier).
+# - +24h (charge par défaut + 24h, p.ex. qqn qui a été déchargé une année précédente!)
+
+###### Département de math
+
+####### Arrivée 2014-2015
+Einstein;Frank EINSTEIN;Fei;9
+EinsteinA;Albert EINSTEIN;Aei;8
+
+####### Arrivée 2013-2014
+Feynman;François Feynman;FFe;1
+Feldspath;Pierre Feldspath;PFE;3
+
+## Local Variables:
+## mode: outline
+## outline-regexp: "#####+ "
+## comment-start: "## "
+## End:

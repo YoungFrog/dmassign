@@ -1,0 +1,42 @@
+# -*- coding: utf-8-unix; -*-
+# FICHIER FOURNI EN EXEMPLE.
+
+###### Comment lire ce fichier par un humain?
+
+# - Pour la théorie, il y a souvent un titulaire (ou deux) pour l'année en
+#   cours, puis des cotitulaires pour faire une tournante les autres années. Ces
+#   derniers sont listés avec 0/0/0 comme charge
+
+# - Quand il ya plusieurs titulaires, il faut un coordinateur. Le premier listé
+#   est le coordinateur!
+
+###### On peut mettre des fausses tâches
+
+### Les tâches suivantes vont être utiles pour calculer les conflits, en
+### rajoutant l'horaire correspondant dans additionnal_schedule.txt
+
+Exe;INDISPONIBLE/Q1;Q1;0/0/0;Einstein
+#^ Ici le groupe est "Q1".
+
+Exe;INDISPONIBLE/Q2;Q2;0/0/0;EinsteinA
+#^ Ici le groupe est "Q2".
+
+Exe;INDISPONIBLE/Q1;Feynman;0/0/0;Feynman
+#^ Ici le groupe est "Feynman". Ce nom importe peu, mais il doit être identique
+#à celui dans additionnal_schedule.txt. On attribue cette la tâche à Feynman
+#pour associer l'horaire à cette personne et faire afficher les conflits éventuels.
+
+Th;MathF000/Q1;Math1;42/0/0;EinsteinA
+Th;MathF000/Q2;Math1;42/0/0;Einstein
+Exe;MathF000/Q1;Math1;0/42/0;Feldspath
+Exe;MathF000/Q2;Math1;0/42/0;Feynman
+
+
+
+# Les lignes suivantes sont lues par emacs :
+
+# Local Variables:
+# mode: outline
+# comment-start: "# "
+# outline-regexp: "^######+ "
+# End:
